@@ -1,0 +1,6 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "outDir": "./dist" // Spécifiez un répertoire de sortie distinct
+    }
+}
