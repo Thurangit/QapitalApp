@@ -1,0 +1,46 @@
+
+
+
+
+@media(max-width: 550px){
+    .pc{
+        display: none;
+    }
+    .rapprochementtop{
+        margin-top: -20px;
+    }
+    .smalltext{
+        font-size: 10px;
+    }
+    .subtext{
+        font-size: 12px;
+    }
+
+    .smalltitle{
+        font-size: 14px;
+        
+    }
+    .normaltitle{
+        font-size: 18px;
+        font-weight: 500;  
+    }
+    .normaltext{
+        font-size: 14px;
+    }
+
+    .inputsendmoney{
+        border-top: none;
+        border-left: none;
+        border-right: none;
+    }
+    
+    
+}
+
+@media(min-width: 550px){
+    .smarthpone{
+        display: none;
+    }
+
+    
+}
