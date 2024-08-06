@@ -4,15 +4,15 @@ import React, { useState, memo } from 'react';
 const ScanQR = memo(() => {
     const [data, setData] = useState('Aucune donnée QR');
 
-    const handleScan = (data) => {
-        if (data) {
-            setData(data);
-        }
-    }
+    // const handleScan = (data) => {
+    //     if (data) {
+    //         setData(data);
+    //     }
+    // }
 
-    const handleError = (err) => {
-        console.error(err);
-    }
+    // const handleError = (err) => {
+    //     console.error(err);
+    // }
 
     return (
         <div>
