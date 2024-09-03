@@ -2,7 +2,7 @@ import React, { useState, useEffect, memo, Fragment } from "react";
 import { Row, Col, Image, Card, Table, Button } from "react-bootstrap";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import AuthUser from '../../components/authuser/AuthUser';
-
+import { urlRoot } from "../../components/authuser/urlApp";
 //circular
 import Circularprogressbar from "../../components/circularprogressbar.js";
 
@@ -151,7 +151,7 @@ const Index = memo((props) => {
   const Page = (page) => {
     navigate(page);
   }
-
+  var urlAvatar = `${urlRoot}/${info_user.avatar}`;
 
   return (
     <Fragment>
@@ -619,12 +619,12 @@ const Index = memo((props) => {
             <small className="mb-2"><span className="badge rounded-pill bg-success">Verified</span></small>
           </div>
           <div className="user-profile">
-            <Image className="theme-color-default-img  rounded-pill avatar-60 img-fluid" src={info_user.avatar} alt="qapital" />
-            <Image className="theme-color-purple-img rounded-pill avatar-60 img-fluid" src={info_user.avatar} alt="qapital" />
-            <Image className="theme-color-blue-img rounded-pill avatar-60 img-fluid" src={info_user.avatar} alt="qapital" />
-            <Image className="theme-color-green-img rounded-pill avatar-60 img-fluid" src={info_user.avatar} alt="qapital" />
-            <Image className="theme-color-yellow-img rounded-pill avatar-60 img-fluid" src={info_user.avatar} alt="qapital" />
-            <Image className="theme-color-pink-img rounded-pill avatar-60 img-fluid" src={info_user.avatar} alt="qapital" />
+            <Image className="theme-color-default-img  rounded-pill avatar-60 img-fluid" src={urlAvatar} alt="qapital" />
+            <Image className="theme-color-purple-img rounded-pill avatar-60 img-fluid" src={urlAvatar} alt="qapital" />
+            <Image className="theme-color-blue-img rounded-pill avatar-60 img-fluid" src={urlAvatar} alt="qapital" />
+            <Image className="theme-color-green-img rounded-pill avatar-60 img-fluid" src={urlAvatar} alt="qapital" />
+            <Image className="theme-color-yellow-img rounded-pill avatar-60 img-fluid" src={urlAvatar} alt="qapital" />
+            <Image className="theme-color-pink-img rounded-pill avatar-60 img-fluid" src={urlAvatar} alt="qapital" />
           </div>
         </div>
         <div className="d-flex justify-content-center align-items-center mt-1">
@@ -719,7 +719,7 @@ const Index = memo((props) => {
                     </div>
                   </div>
                   <div className="mt-3" onClick={myacitivies}>
-                    <span>ACTIVITES</span>
+                    <span>MON MENU</span>
                     <div>
                       <h3 className="counter"><CountUp start={0} end={total_activities} duration={2} decimals={0} decimal="," /></h3>
                     </div>

@@ -118,6 +118,36 @@ const ActivitiesList = () => {
 
 					</Col>
 
+
+					<Col lg="4" className="col-lg-4 mb-4">
+
+						<Card className="mb-0">
+							<div className="media-support-user-img">
+								<Image className="img-fluid bd-placeholder-img card-img-top" width="100%" src={image3} alt="" />
+							</div>
+							<Card.Body>
+								<h5 className="card-title">Jobz</h5>
+								<p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+								<Link to="/" className="btn btn-primary">Choisir</Link>
+							</Card.Body>
+						</Card>
+
+					</Col>
+					<Col lg="4" className="col-lg-4 mb-4">
+
+						<Card className="mb-0">
+							<div className="media-support-user-img">
+								<Image className="img-fluid bd-placeholder-img card-img-top" width="100%" src={image3} alt="" />
+							</div>
+							<Card.Body>
+								<h5 className="card-title">HomelyM</h5>
+								<p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+								<Link to="/" className="btn btn-primary">Choisir</Link>
+							</Card.Body>
+						</Card>
+
+					</Col>
+
 					<Col lg="4" className="col-lg-4 mb-4">
 
 						<Card className="mb-0">
@@ -228,6 +258,35 @@ const ActivitiesList = () => {
 						</div>
 						<div className="text-center">
 							<small className="subtext">Invest</small>
+						</div>
+					</Col>
+
+					<Col xs="3" className="mb-4">
+						<div className="d-flex align-items-center justify-content-center">
+							<Image className="theme-color-default-img  rounded-pill avatar-50" src={image3} alt="qapital" />
+							<Image className="theme-color-purple-img rounded-pill avatar-50" src={image3} alt="qapital" />
+							<Image className="theme-color-blue-img rounded-pill avatar-50" src={image3} alt="qapital" />
+							<Image className="theme-color-green-img rounded-pill avatar-50" src={image3} alt="qapital" />
+							<Image className="theme-color-yellow-img rounded-pill avatar-50" src={image3} alt="qapital" />
+							<Image className="theme-color-pink-img rounded-pill avatar-50" src={image3} alt="qapital" />
+
+						</div>
+						<div className="text-center">
+							<small className="subtext">Jobz</small>
+						</div>
+					</Col>
+					<Col xs="3" className="mb-4">
+						<div className="d-flex align-items-center justify-content-center">
+							<Image className="theme-color-default-img  rounded-pill avatar-50" src={image3} alt="qapital" />
+							<Image className="theme-color-purple-img rounded-pill avatar-50" src={image3} alt="qapital" />
+							<Image className="theme-color-blue-img rounded-pill avatar-50" src={image3} alt="qapital" />
+							<Image className="theme-color-green-img rounded-pill avatar-50" src={image3} alt="qapital" />
+							<Image className="theme-color-yellow-img rounded-pill avatar-50" src={image3} alt="qapital" />
+							<Image className="theme-color-pink-img rounded-pill avatar-50" src={image3} alt="qapital" />
+
+						</div>
+						<div className="text-center">
+							<small className="subtext">Homely</small>
 						</div>
 					</Col>
 					<Col xs="3" className="mb-4">

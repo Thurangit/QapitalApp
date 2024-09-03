@@ -17,7 +17,7 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 import { Link, useNavigate, useParams } from "react-router-dom";
 import AuthUser from "../../../components/authuser/AuthUser";
-
+import { urlApi } from "../../../components/authuser/urlApp";
 
 
 // AOS
@@ -83,7 +83,7 @@ const AssociationAPropos = memo((props) => {
       const formData = new FormData();
       formData.append("file", imagedata);
 
-      Axios.post("http://192.168.44.44:8000/api/association/logo/" + idassociation, formData)
+      Axios.post(`${urlApi}/association/logo/` + idassociation, formData)
         .then((res) => {
           setIsLoading(false);
           fetchAllassociations_info();

@@ -3,7 +3,7 @@ import React, { Fragment, useEffect, useState } from 'react'
 
 import { Row, Col, Image, Form, Tab, Button, InputGroup, Spinner } from 'react-bootstrap'
 import Card from '../../components/Card'
-
+import { urlApi } from '../../components/authuser/urlApp';
 import { useParams } from 'react-router-dom'
 import AuthUser from '../../components/authuser/AuthUser';
 import Axios from 'axios';
@@ -48,7 +48,7 @@ const Documentset = () => {
       formData.append("file1", imagedata1);
     }
 
-    Axios.post("http://192.168.44.44:8000/api/set/documents/" + document + "/" + userid, formData)
+    Axios.post(`${urlApi}/set/documents/"${document}/${userid}`, formData)
       .then((res) => {
 
         fetchAllinfo_user();

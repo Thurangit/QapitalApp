@@ -14,7 +14,7 @@ import {
 
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-
+import { urlApi } from "../../../components/authuser/urlApp";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import AuthUser from "../../../components/authuser/AuthUser";
 
@@ -83,7 +83,7 @@ const EpargneAPropos = memo((props) => {
       const formData = new FormData();
       formData.append("file", imagedata);
 
-      Axios.post("http://192.168.44.44:8000/api/epargne/logo/" + idepargne, formData)
+      Axios.post(`${urlApi}/epargne/logo/` + idepargne, formData)
         .then((res) => {
           setIsLoading(false);
           fetchAllepargne_info();

@@ -8,9 +8,10 @@ import { Link, useNavigate } from 'react-router-dom'
 
 import om from "../../assets/images/brands/om.png";
 import momo from "../../assets/images/brands/momo.png";
-
+import { urlApi } from '../../components/authuser/urlApp';
 import AuthUser from '../../components/authuser/AuthUser';
 import Axios from 'axios';
+import { urlRoot } from '../../components/authuser/urlApp';
 
 const ProfileUser = () => {
     const [toggler, setToggler] = useState();
@@ -99,7 +100,7 @@ const ProfileUser = () => {
             const formData = new FormData();
             formData.append("file", imagedata);
 
-            Axios.post("http://192.168.44.44:8000/api/set/profilephoto/" + userid, formData)
+            Axios.post(`${urlApi}/set/profilephoto/` + userid, formData)
                 .then((res) => {
 
                     setIsLoading(false);
@@ -288,6 +289,8 @@ const ProfileUser = () => {
     }
 
 
+    var urlAvatar = `${urlRoot}/${info_user.avatar}`;
+
 
 
     return (
@@ -342,12 +345,12 @@ const ProfileUser = () => {
 
                                         <div className="d-flex justify-content-center mt-2 mb-4">
                                             <div className="user-profile" onClick={handleShow1}>
-                                                <Image className="theme-color-default-img  rounded-pill avatar-130 img-fluid" src={info_user.avatar} alt="profil" />
-                                                <Image className="theme-color-purple-img rounded-pill avatar-130 img-fluid" src={info_user.avatar} alt="profil" />
-                                                <Image className="theme-color-blue-img rounded-pill avatar-130 img-fluid" src={info_user.avatar} alt="profil" />
-                                                <Image className="theme-color-green-img rounded-pill avatar-130 img-fluid" src={info_user.avatar} alt="profil" />
-                                                <Image className="theme-color-yellow-img rounded-pill avatar-130 img-fluid" src={info_user.avatar} alt="profil" />
-                                                <Image className="theme-color-pink-img rounded-pill avatar-130 img-fluid" src={info_user.avatar} alt="profil" />
+                                                <Image className="theme-color-default-img  rounded-pill avatar-130 img-fluid" src={urlAvatar} alt="profil" />
+                                                <Image className="theme-color-purple-img rounded-pill avatar-130 img-fluid" src={urlAvatar} alt="profil" />
+                                                <Image className="theme-color-blue-img rounded-pill avatar-130 img-fluid" src={urlAvatar} alt="profil" />
+                                                <Image className="theme-color-green-img rounded-pill avatar-130 img-fluid" src={urlAvatar} alt="profil" />
+                                                <Image className="theme-color-yellow-img rounded-pill avatar-130 img-fluid" src={urlAvatar} alt="profil" />
+                                                <Image className="theme-color-pink-img rounded-pill avatar-130 img-fluid" src={urlAvatar} alt="profil" />
                                                 <svg width="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M13.7476 20.4428H21.0002" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"
                                                         strokeLinejoin="round" />

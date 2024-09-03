@@ -14,7 +14,7 @@ import {
 
 import { Link, useNavigate, useParams } from "react-router-dom";
 import AuthUser from "../../../components/authuser/AuthUser";
-
+import { urlApi } from "../../../components/authuser/urlApp";
 // AOS
 import AOS from "aos";
 import "aos";
@@ -129,7 +129,7 @@ const AssociationForum = memo((props) => {
             formData.append("intitule", intitule);
             formData.append("idassociation", idassociation);
 
-            Axios.post("http://192.168.44.44:8000/api/set/document/association", formData)
+            Axios.post(`${urlApi}/set/document/association`, formData)
                 .then((res) => {
                     fetchAlldocuments_association();
                     handleClose();

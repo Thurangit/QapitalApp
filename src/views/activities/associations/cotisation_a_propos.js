@@ -14,7 +14,7 @@ import {
 
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-
+import { urlApi } from "../../../components/authuser/urlApp";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import AuthUser from "../../../components/authuser/AuthUser";
 
@@ -83,7 +83,7 @@ const CotisationAPropos = memo((props) => {
       const formData = new FormData();
       formData.append("file", imagedata);
 
-      Axios.post("http://192.168.44.44:8000/api/cotisation/logo/" + idcotisation, formData)
+      Axios.post(`${urlApi}/cotisation/logo/` + idcotisation, formData)
         .then((res) => {
           setIsLoading(false);
           fetchAllcotisation_info();

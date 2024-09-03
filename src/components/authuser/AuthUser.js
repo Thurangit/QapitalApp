@@ -2,7 +2,7 @@ import axios from 'axios';
 import axiosRetry from 'axios-retry';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import { urlApi } from './urlApp';
 export default function AuthUser() {
 
     const navigate = useNavigate();
@@ -31,7 +31,7 @@ export default function AuthUser() {
         navigate("/signin");
     };
     const http = axios.create({
-        baseURL: "http://192.168.44.44:8000/api/",
+        baseURL: `${urlApi}/`,
         headers: {
             "Content-type": "application/json",
             "Authorization": `Bearer ${token}`
