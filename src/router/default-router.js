@@ -107,6 +107,7 @@ import StatsGenerales from "../views/transactions/statistics/stats";
 import FullHistory from "../views/transactions/history/fullhistory";
 import ListGiftReceive from "../views/transactions/receivemoney/list_cadeaux_recus";
 import ScanQR from "../views/transactions/receivemoney/scanqr";
+import InternationalCheckersGame from "../views/activities/gameone";
 //:::::::::::::::::::::::::::::::::::Associaton
 
 //::::::::::::::::::::::::::::::::::Transactions
@@ -342,6 +343,11 @@ export const DefaultRouter = [
       {
         path: "Qapital/IA/",
         element: <AssistantIA />,
+      },
+      /////GAMES
+      {
+        path: "Qapital/Dames/",
+        element: <InternationalCheckersGame />,
       },
 
       ////Profile User

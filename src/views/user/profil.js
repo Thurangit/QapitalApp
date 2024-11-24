@@ -12,7 +12,7 @@ import { urlApi } from '../../components/authuser/urlApp';
 import AuthUser from '../../components/authuser/AuthUser';
 import Axios from 'axios';
 import { urlRoot } from '../../components/authuser/urlApp';
-
+import FloatingBottomNavBar from '../uikit/bottombar';
 const ProfileUser = () => {
     const [toggler, setToggler] = useState();
     const [isLoading, setIsLoading] = useState(false);
@@ -613,6 +613,7 @@ const ProfileUser = () => {
 
                             </Tab.Pane >
                         </Tab.Content>
+
                     </Col>
 
 

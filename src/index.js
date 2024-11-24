@@ -18,12 +18,11 @@ import { DefaultRouter } from "./router/default-router";
 import { InvitationsRouter } from "./router/invitations-router";
 import { ExternPagesRouter } from "./router/extenpages-router";
 
-
+import './index.css';
 import SignIn from "./views/dashboard/auth/sign-in";
 import IndexModules from "./views/index";
 import Home from "./views/landing-modules/home";
 import Blog from "./views/landing-modules/blog";
-
 import SignUp from "./views/dashboard/auth/sign-up";
 
 const router = createBrowserRouter([

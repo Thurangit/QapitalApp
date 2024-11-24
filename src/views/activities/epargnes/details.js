@@ -1,11 +1,11 @@
-import {useState,memo,Fragment} from 'react'
-import {Row,Col,Image,Form,Button,InputGroup,FormControl} from 'react-bootstrap'
-import {Card} from 'react-bootstrap'
+import { useState, memo, Fragment } from 'react'
+import { Row, Col, Image, Form, Button, InputGroup, FormControl } from 'react-bootstrap'
+import { Card } from 'react-bootstrap'
 import FsLightbox from 'fslightbox-react';
 
 // import {bindActionCreators} from "redux"
 
-import {Link,useParams} from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 // img
 import shap2 from '../../../assets/images/shapes/02.png'
 import shap4 from '../../../assets/images/shapes/04.png'
@@ -37,210 +37,311 @@ import ShareOffcanvas from '../../../components/partials/components/shareoffcanv
 import Circularprogressbar from '../../../components/circularprogressbar'
 
 const EpargneDetails = memo((props) => {
-    const [toggler, setToggler] = useState(false);
-		const {ref} = useParams();
-    return (
-        <Fragment>
-          <FsLightbox
-                toggler={ toggler }
-                sources={ [icon4,shap2,icon8,shap4,icon2,shap6,icon5,shap4,icon1] }
-            />
-            <Row>
+	const [toggler, setToggler] = useState(false);
+	const { ref } = useParams();
+	return (
+		<Fragment>
+			<FsLightbox
+				toggler={toggler}
+				sources={[icon4, shap2, icon8, shap4, icon2, shap6, icon5, shap4, icon1]}
+			/>
+			<Row>
 
-								<Col lg="12">
-                    <Card>
-                        <Card.Body>
-													{ref === "A00001" ? (<div>
+				<Col lg="12">
+					<Card>
+						<Card.Body>
+							{ref === "A00001" ? (<div>
 
-																	<div className="d-flex align-items-center justify-content-center">
-																			<div className="d-flex flex-column text-center align-items-center justify-content-between ">
-																					<div className="fs-italic">
-																							<h5>Epargne Stricte +</h5>
-																							<div className="text-black-50 mb-1">
-																									<small>Trainer Expert</small>
-																							</div>
-																					</div>
-																					<div className="text-black-50 text-warning">
-																							<svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 20 20" fill="orange">
-																									<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-																							</svg>
-																							<svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 20 20" fill="orange">
-																									<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-																							</svg>
-
-																							<svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 20 20" fill="orange">
-																									<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-																							</svg>
-																							<svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 20 20" fill="orange">
-																									<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-																							</svg>
-																							<svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 20 20" fill="orange">
-																									<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-																							</svg>
-
-																					</div>
-																					<div className="card-profile-progress">
-
-																							<Image className="theme-color-pink-img img-fluid rounded-circle card-img" src={avatars44} alt="qapital"/>
-
-																					</div>
-																					<div className="mt-3 text-center text-black-50">
-																							<p>Slate helps you see how many more days you need</p>
-																					</div>
-																					<div className="d-flex icon-pill">
-																							<Link to="#" className="btn btn-sm rounded-pill px-2 py-2 ms-2">
-																									<svg xmlns="http://www.w3.org/2000/svg" className="text-primary" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-																											<path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
-																									</svg>
-																							</Link>
-																							<Link to="#" className="btn btn-sm rounded-pill px-2 py-2  ms-2">
-																									<svg xmlns="http://www.w3.org/2000/svg" className="text-danger" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-																											<path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z" />
-																									</svg>
-																							</Link>
-																							<Link to="#" className="btn btn-sm rounded-pill px-2 py-2 ms-2">
-																									<svg xmlns="http://www.w3.org/2000/svg" className="text-success" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-																											<path fillRule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clipRule="evenodd" />
-																									</svg>
-																							</Link>
-																					</div>
-																					<Link to={"/Regist/Epargne/" + "A00001"}><Button variant="btn btn-primary" className="mt-4">Choisir</Button></Link>
-																			</div>
-
-																	</div>
-
-														</div>):(<div></div>)}
-													{ref === "A00002" ? (<div>
+								<div className="d-flex align-items-center justify-content-center">
+									<div className="d-flex flex-column text-center align-items-center justify-content-between ">
+										<div className="fs-italic">
+											<h5>Conditions d'utilisation</h5>
+											<div className="text-black-50 mb-1">
+												<small>Epargne Flexible</small>
+											</div>
+										</div>
 
 
-																		<div className="d-flex align-items-center justify-content-center">
-																				<div className="d-flex flex-column text-center align-items-center justify-content-between ">
-																						<div className="fs-italic">
-																								<h5>Epargne Stricte +</h5>
-																								<div className="text-black-50 mb-1">
-																										<small>Trainer Expert {ref}</small>
-																								</div>
-																						</div>
-																						<div className="text-black-50 text-warning">
-																								<svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 20 20" fill="orange">
-																										<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-																								</svg>
-																								<svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 20 20" fill="orange">
-																										<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-																								</svg>
+										<div className="card-profile-progress">
 
-																								<svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 20 20" fill="orange">
-																										<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-																								</svg>
-																								<svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 20 20" fill="orange">
-																										<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-																								</svg>
-																								<svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 20 20" fill="orange">
-																										<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-																								</svg>
+											<Image className="theme-color-pink-img img-fluid rounded-circle card-img" src={avatars44} alt="qapital" />
 
-																						</div>
-																						<div className="card-profile-progress">
+										</div>
+										<div className="mt-3 text-black-50" style={{ textAlign: 'left' }}>
+											<h3>Conditions Générales d'Utilisation</h3>
 
-																								<Image className="theme-color-pink-img img-fluid rounded-circle card-img" src={avatars44} alt="qapital"/>
+											<section>
+												<h4 style={{ marginBottom: '20px', marginTop: '20px' }}>1. Objet de l'Offre</h4>
+												<p>
+													Cette application permet aux utilisateurs d'épargner à leur rythme et de retirer leur argent quand ils le souhaitent, sans aucune contrainte. Elle offre une flexibilité totale pour répondre aux besoins financiers des utilisateurs.
+												</p>
+											</section>
 
-																						</div>
-																						<div className="mt-3 text-center text-black-50">
-																								<p>Slate helps you see how many more days you need</p>
-																						</div>
-																						<div className="d-flex icon-pill">
-																								<Link to="#" className="btn btn-sm rounded-pill px-2 py-2 ms-2">
-																										<svg xmlns="http://www.w3.org/2000/svg" className="text-primary" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-																												<path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
-																										</svg>
-																								</Link>
-																								<Link to="#" className="btn btn-sm rounded-pill px-2 py-2  ms-2">
-																										<svg xmlns="http://www.w3.org/2000/svg" className="text-danger" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-																												<path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z" />
-																										</svg>
-																								</Link>
-																								<Link to="#" className="btn btn-sm rounded-pill px-2 py-2 ms-2">
-																										<svg xmlns="http://www.w3.org/2000/svg" className="text-success" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-																												<path fillRule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clipRule="evenodd" />
-																										</svg>
-																								</Link>
-																						</div>
-																						<Link to={"/Regist/Epargne/" + "A00002"}><Button variant="btn btn-primary" className="mt-4">Choisir</Button></Link>
-																				</div>
+											<section>
+												<h4 style={{ marginBottom: '20px', marginTop: '20px' }}>2. Inscription et Sécurité</h4>
+												<h5>Inscription</h5>
+												<p>
+													Pour utiliser l'application, les utilisateurs doivent créer un compte en fournissant des informations personnelles exactes et à jour.
+												</p>
+												<h5>Sécurité</h5>
+												<p>
+													Nous mettons en œuvre des mesures de sécurité avancées pour protéger les données des utilisateurs. Cependant, les utilisateurs sont responsables de la confidentialité de leurs identifiants de connexion.
+												</p>
+											</section>
 
-																		</div>
+											<section>
+												<h4 style={{ marginBottom: '20px', marginTop: '20px' }}>3. Utilisation de l'Application</h4>
+												<h5>Épargne</h5>
+												<p>
+													Les utilisateurs peuvent épargner à leur propre rythme, en effectuant des dépôts ponctuels ou réguliers.
+												</p>
+												<h5>Retraits</h5>
+												<p>
+													Les utilisateurs peuvent retirer leur argent à tout moment, sans pénalité ni restriction.
+												</p>
+											</section>
 
+											<section>
+												<h4 style={{ marginBottom: '20px', marginTop: '20px' }}>4. Protection des Données</h4>
+												<h5>Confidentialité</h5>
+												<p>
+													Les informations personnelles des utilisateurs sont traitées conformément à notre politique de confidentialité. Nous ne partageons pas les données des utilisateurs avec des tiers sans leur consentement explicite.
+												</p>
+												<h5>Sécurité des Transactions</h5>
+												<p>
+													Toutes les transactions financières sont sécurisées par des protocoles de cryptage de pointe.
+												</p>
+											</section>
 
-														</div>):(<div></div>)}
-													{ref === "A00003" ? (<div>
+											<section>
+												<h4 style={{ marginBottom: '20px', marginTop: '20px' }}>5. Responsabilités</h4>
+												<h5>Propriétaire de l'Application</h5>
+												<p>
+													Nous nous engageons à maintenir l'application fonctionnelle et sécurisée. Cependant, nous ne sommes pas responsables des pertes financières dues à une mauvaise utilisation de l'application par les utilisateurs.
+												</p>
+												<h5>Utilisateurs</h5>
+												<p>
+													Les utilisateurs doivent utiliser l'application de manière responsable et conformément aux présentes conditions générales. Toute activité frauduleuse ou abusive entraînera la suspension ou la résiliation du compte utilisateur.
+												</p>
+											</section>
 
+											<section>
+												<h4 style={{ marginBottom: '20px', marginTop: '20px' }}>6. Modifications des Conditions</h4>
+												<p>
+													Nous nous réservons le droit de modifier ces conditions générales à tout moment. Les utilisateurs seront informés de toute modification via l'application ou par e-mail. Ces modifications n'affecteront pas la somme d'argent investie par les utilisateurs.
+												</p>
+											</section>
 
-																			<div className="d-flex align-items-center justify-content-center">
-																					<div className="d-flex flex-column text-center align-items-center justify-content-between ">
-																							<div className="fs-italic">
-																									<h5>Epargne Stricte +</h5>
-																									<div className="text-black-50 mb-1">
-																											<small>Trainer Expert {ref}</small>
-																									</div>
-																							</div>
-																							<div className="text-black-50 text-warning">
-																									<svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 20 20" fill="orange">
-																											<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-																									</svg>
-																									<svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 20 20" fill="orange">
-																											<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-																									</svg>
+											<section>
+												<h4 style={{ marginBottom: '20px', marginTop: '20px' }}>7. Contact et Support</h4>
+												<p>
+													Pour toute question ou assistance, les utilisateurs peuvent contacter notre service client via l'application ou par e-mail à support@votreapplication.com.
+												</p>
+											</section>
+										</div>
 
-																									<svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 20 20" fill="orange">
-																											<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-																									</svg>
-																									<svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 20 20" fill="orange">
-																											<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-																									</svg>
-																									<svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 20 20" fill="orange">
-																											<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-																									</svg>
+										<Link to={"/Regist/Epargne/" + "A00001"}><Button variant="btn btn-success" className="mt-4">J'ACCEPTE</Button></Link>
+									</div>
 
-																							</div>
-																							<div className="card-profile-progress">
+								</div>
 
-																									<Image className="theme-color-pink-img img-fluid rounded-circle card-img" src={avatars44} alt="qapital"/>
-
-																							</div>
-																							<div className="mt-3 text-center text-black-50">
-																									<p>Slate helps you see how many more days you need</p>
-																							</div>
-																							<div className="d-flex icon-pill">
-																									<Link to="#" className="btn btn-sm rounded-pill px-2 py-2 ms-2">
-																											<svg xmlns="http://www.w3.org/2000/svg" className="text-primary" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-																													<path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
-																											</svg>
-																									</Link>
-																									<Link to="#" className="btn btn-sm rounded-pill px-2 py-2  ms-2">
-																											<svg xmlns="http://www.w3.org/2000/svg" className="text-danger" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-																													<path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z" />
-																											</svg>
-																									</Link>
-																									<Link to="#" className="btn btn-sm rounded-pill px-2 py-2 ms-2">
-																											<svg xmlns="http://www.w3.org/2000/svg" className="text-success" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-																													<path fillRule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clipRule="evenodd" />
-																											</svg>
-																									</Link>
-																							</div>
-																							<Link to={"/Regist/Epargne/" + "A00001"}><Button variant="btn btn-primary" className="mt-4">Choisir</Button></Link>
-																					</div>
-
-																			</div>
+							</div>) : (<div></div>)}
+							{ref === "A00002" ? (<div>
 
 
-														</div>):(<div></div>)}
+								<div className="d-flex align-items-center justify-content-center">
+									<div className="d-flex flex-column text-center align-items-center justify-content-between ">
+										<div className="fs-italic">
+											<h5>Conditions Générales d'Utilisation</h5>
+											<div className="text-black-50 mb-1">
+												<small>Epargne Stricte</small>
+											</div>
+										</div>
 
-                        </Card.Body>
-                    </Card>
-                </Col>
-            </Row>
-        </Fragment>
-    )
+										<div className="mt-3 text-black-50" style={{ textAlign: 'left' }}>
+											<h3>Conditions Générales d'Utilisation</h3>
+
+											<section>
+												<h4 style={{ marginBottom: '20px', marginTop: '20px' }}>1. Objet de l'Offre</h4>
+												<p>
+													Optez pour notre épargne programmée : fixez une date de retrait et, si vous le souhaitez, un montant à atteindre. Retirez uniquement à la date fixée, assurant une gestion optimale de vos économies.
+												</p>
+											</section>
+
+											<section>
+												<h4 style={{ marginBottom: '20px', marginTop: '20px' }}>2. Inscription et Sécurité</h4>
+												<h5>Inscription</h5>
+												<p>
+													Pour utiliser l'application, les utilisateurs doivent créer un compte en fournissant des informations personnelles exactes et à jour.
+												</p>
+												<h5>Sécurité</h5>
+												<p>
+													Nous mettons en œuvre des mesures de sécurité avancées pour protéger les données des utilisateurs. Cependant, les utilisateurs sont responsables de la confidentialité de leurs identifiants de connexion.
+												</p>
+											</section>
+
+											<section>
+												<h4 style={{ marginBottom: '20px', marginTop: '20px' }}>3. Utilisation de l'Application</h4>
+												<h5>Épargne Programmée</h5>
+												<p>
+													Les utilisateurs peuvent fixer une date de retrait et, si souhaité, un montant à atteindre. Les fonds ne peuvent être retirés qu'à la date fixée, garantissant une gestion optimale des économies.
+												</p>
+												<h5>Retraits</h5>
+												<p>
+													Les utilisateurs ne peuvent retirer leur argent qu'à la date fixée lors de la programmation de l'épargne. Cette contrainte assure une discipline financière et une meilleure gestion des économies.
+												</p>
+											</section>
+
+											<section>
+												<h4 style={{ marginBottom: '20px', marginTop: '20px' }}>4. Protection des Données</h4>
+												<h5>Confidentialité</h5>
+												<p>
+													Les informations personnelles des utilisateurs sont traitées conformément à notre politique de confidentialité. Nous ne partageons pas les données des utilisateurs avec des tiers sans leur consentement explicite.
+												</p>
+												<h5>Sécurité des Transactions</h5>
+												<p>
+													Toutes les transactions financières sont sécurisées par des protocoles de cryptage de pointe.
+												</p>
+											</section>
+
+											<section>
+												<h4 style={{ marginBottom: '20px', marginTop: '20px' }}>5. Responsabilités</h4>
+												<h5>Propriétaire de l'Application</h5>
+												<p>
+													Nous nous engageons à maintenir l'application fonctionnelle et sécurisée. Cependant, nous ne sommes pas responsables des pertes financières dues à une mauvaise utilisation de l'application par les utilisateurs.
+												</p>
+												<h5>Utilisateurs</h5>
+												<p>
+													Les utilisateurs doivent utiliser l'application de manière responsable et conformément aux présentes conditions générales. Toute activité frauduleuse ou abusive entraînera la suspension ou la résiliation du compte utilisateur.
+												</p>
+											</section>
+
+											<section>
+												<h4 style={{ marginBottom: '20px', marginTop: '20px' }}>6. Modifications des Conditions</h4>
+												<p>
+													Nous nous réservons le droit de modifier ces conditions générales à tout moment. Les utilisateurs seront informés de toute modification via l'application ou par e-mail. Ces modifications n'affecteront pas la somme d'argent investie par les utilisateurs.
+												</p>
+											</section>
+
+											<section>
+												<h4 style={{ marginBottom: '20px', marginTop: '20px' }}>7. Contact et Support</h4>
+												<p>
+													Pour toute question ou assistance, les utilisateurs peuvent contacter notre service client via l'application ou par e-mail à support@votreapplication.com.
+												</p>
+											</section>
+										</div>
+
+										<Link to={"/Regist/Epargne/" + "A00002"}><Button variant="btn btn-success" className="mt-4">J'ACCEPTE</Button></Link>
+									</div>
+
+								</div>
+
+
+							</div>) : (<div></div>)}
+							{ref === "A00003" ? (<div>
+
+
+								<div className="d-flex align-items-center justify-content-center">
+									<div className="d-flex flex-column text-center align-items-center justify-content-between ">
+										<div className="fs-italic">
+											<h5>Conditions Générales d'Utilisation</h5>
+											<div className="text-black-50 mb-1">
+												<small>Epargne Stricte +</small>
+											</div>
+										</div>
+
+										<div className="card-profile-progress">
+
+											<Image className="theme-color-pink-img img-fluid rounded-circle card-img" src={avatars44} alt="qapital" />
+
+										</div>
+										<div className="mt-3 text-black-50" style={{ textAlign: 'left' }}>
+											<h3>Conditions Générales d'Utilisation</h3>
+
+											<section>
+												<h4 style={{ marginBottom: '20px', marginTop: '20px' }}>1. Objet de l'Offre</h4>
+												<p>
+													Épargnez avec notre plan sécurisé : premier dépôt minimum de 100 000 FCFA pour le fonds de caisse. Retrait uniquement à la date fixée, après un minimum de 7 mois. Profitez de bénéfices garantis pour une gestion optimale de vos économies.
+												</p>
+											</section>
+
+											<section>
+												<h4 style={{ marginBottom: '20px', marginTop: '20px' }}>2. Inscription et Sécurité</h4>
+												<h5>Inscription</h5>
+												<p>
+													Pour utiliser l'application, les utilisateurs doivent créer un compte en fournissant des informations personnelles exactes et à jour.
+												</p>
+												<h5>Sécurité</h5>
+												<p>
+													Nous mettons en œuvre des mesures de sécurité avancées pour protéger les données des utilisateurs. Cependant, les utilisateurs sont responsables de la confidentialité de leurs identifiants de connexion.
+												</p>
+											</section>
+
+											<section>
+												<h4 style={{ marginBottom: '20px', marginTop: '20px' }}>3. Utilisation de l'Application</h4>
+												<h5>Épargne Sécurisée</h5>
+												<p>
+													Les utilisateurs doivent effectuer un premier dépôt minimum de 100 000 FCFA pour le fonds de caisse. Les fonds ne peuvent être retirés qu'à la date fixée, après un minimum de 7 mois. Cette contrainte assure une gestion optimale des économies et des bénéfices garantis.
+												</p>
+												<h5>Retraits</h5>
+												<p>
+													Les utilisateurs ne peuvent retirer leur argent qu'à la date fixée, après un minimum de 7 mois. Cette contrainte assure une discipline financière et une meilleure gestion des économies.
+												</p>
+											</section>
+
+											<section>
+												<h4 style={{ marginBottom: '20px', marginTop: '20px' }}>4. Protection des Données</h4>
+												<h5>Confidentialité</h5>
+												<p>
+													Les informations personnelles des utilisateurs sont traitées conformément à notre politique de confidentialité. Nous ne partageons pas les données des utilisateurs avec des tiers sans leur consentement explicite.
+												</p>
+												<h5>Sécurité des Transactions</h5>
+												<p>
+													Toutes les transactions financières sont sécurisées par des protocoles de cryptage de pointe.
+												</p>
+											</section>
+
+											<section>
+												<h4 style={{ marginBottom: '20px', marginTop: '20px' }}>5. Responsabilités</h4>
+												<h5>Propriétaire de l'Application</h5>
+												<p>
+													Nous nous engageons à maintenir l'application fonctionnelle et sécurisée. Cependant, nous ne sommes pas responsables des pertes financières dues à une mauvaise utilisation de l'application par les utilisateurs.
+												</p>
+												<h5>Utilisateurs</h5>
+												<p>
+													Les utilisateurs doivent utiliser l'application de manière responsable et conformément aux présentes conditions générales. Toute activité frauduleuse ou abusive entraînera la suspension ou la résiliation du compte utilisateur.
+												</p>
+											</section>
+
+											<section>
+												<h4 style={{ marginBottom: '20px', marginTop: '20px' }}>6. Modifications des Conditions</h4>
+												<p>
+													Nous nous réservons le droit de modifier ces conditions générales à tout moment. Les utilisateurs seront informés de toute modification via l'application ou par e-mail. Ces modifications n'affecteront pas la somme d'argent investie par les utilisateurs.
+												</p>
+											</section>
+
+											<section>
+												<h4 style={{ marginBottom: '20px', marginTop: '20px' }}>7. Contact et Support</h4>
+												<p>
+													Pour toute question ou assistance, les utilisateurs peuvent contacter notre service client via l'application ou par e-mail à support@votreapplication.com.
+												</p>
+											</section>
+										</div>
+
+										<Link to={"/Regist/Epargne/" + "A00001"}><Button variant="btn btn-success" className="mt-4">J'ACCEPTE</Button></Link>
+									</div>
+
+								</div>
+
+
+							</div>) : (<div></div>)}
+
+						</Card.Body>
+					</Card>
+				</Col>
+			</Row>
+		</Fragment>
+	)
 }
 )
 

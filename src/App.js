@@ -15,18 +15,17 @@ import "./assets/css/navbaraddcontent.css"
 
 // Redux Selector / Action
 import { useDispatch } from 'react-redux';
-
+import FloatingBottomNavBar from "./views/uikit/bottombar"
 // import state selectors
 import { setSetting } from './store/setting/actions'
-
-function App({children}) {
+function App({ children }) {
   const dispatch = useDispatch()
   dispatch(setSetting())
   return (
     <div className="App">
       {/* <IndexRouters /> */}
       {children}
-      
+      <FloatingBottomNavBar />
     </div>
   );
 }

@@ -23,10 +23,47 @@ import { useSelector } from "react-redux";
 // Import selectors & action from setting store
 import * as SettingSelector from "../../../store/setting/selectors";
 // install Swiper modules
-
+import { Container } from 'react-bootstrap';
 
 import image1 from '../../../assets/images/activities/image1.jpeg'
 import CountUp from "react-countup";
+
+import { ListGroup } from 'react-bootstrap';
+
+const transactions = [
+  { id: 1, date: '2024-09-15', description: 'Dépôt de salaire', amount: 2500, type: 'credit', status: 'réussi' },
+  { id: 2, date: '2024-09-16', description: 'Achat supermarché (courses hebdomadaires)', amount: 100000, type: 'debit', status: 'réussi' },
+  { id: 3, date: '2024-09-18', description: 'Paiement loyer appartement centre-ville', amount: 800, type: 'debit', status: 'en attente' },
+  { id: 4, date: '2024-09-20', description: 'Remboursement ami (dîner restaurant)', amount: 50, type: 'credit', status: 'réussi' },
+  { id: 5, date: '2024-09-22', description: 'Facture électricité (consommation été)', amount: 75.30, type: 'debit', status: 'échoué' },
+  { id: 6, date: '2024-09-24', description: 'Retrait DAB pour dépenses courantes', amount: 100, type: 'debit', status: 'réussi' },
+  { id: 7, date: '2024-09-26', description: 'Virement reçu (remboursement frais professionnels)', amount: 300, type: 'credit', status: 'en attente' },
+  { id: 8, date: '2024-09-28', description: 'Achat en ligne (vêtements et accessoires)', amount: 89.99, type: 'debit', status: 'réussi' },
+  { id: 9, date: '2024-09-30', description: 'Remboursement impôts sur le revenu', amount: 150, type: 'credit', status: 'réussi' },
+  { id: 10, date: '2024-10-01', description: 'Abonnement streaming (Netflix, Prime, Disney+)', amount: 35.99, type: 'debit', status: 'réussi' },
+  { id: 11, date: '2024-10-02', description: 'Vente en ligne (objets d\'occasion)', amount: 75, type: 'credit', status: 'en attente' },
+  { id: 12, date: '2024-10-03', description: 'Achat restaurant (anniversaire avec amis)', amount: 85, type: 'debit', status: 'réussi' },
+];
+
+const getStatusStyle = (status) => {
+  switch (status) {
+    case 'réussi':
+      return 'success';
+    case 'échoué':
+      return 'danger';
+    case 'en attente':
+      return 'warning';
+    default:
+      return 'secondary';
+  }
+};
+
+
+const formatNumber = (number) => {
+  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};
+
+
 SwiperCore.use([Navigation]);
 
 const DetailEpargneOfUser = memo((props) => {
@@ -42,6 +79,11 @@ const DetailEpargneOfUser = memo((props) => {
   const [show1, setShow1] = useState(false);
   const handleClose1 = () => setShow1(false);
   const handleShow1 = () => setShow1(true);
+  const [visibleTransactions, setVisibleTransactions] = useState(10);
+  const loadMore = () => {
+    setVisibleTransactions(prevCount => Math.min(prevCount + 5, transactions.length));
+  };
+
 
 
   const [epargnes_info, setepargnes_info] = useState([]);
@@ -261,6 +303,39 @@ const DetailEpargneOfUser = memo((props) => {
               <Card>
 
                 <Card.Body>
+
+                  <Container className="mt-5">
+                    <Card>
+                      <Card.Body>
+                        <Card.Title className="mb-4">Transactions récentes</Card.Title>
+                        <Table striped bordered hover>
+                          <thead>
+                            <tr>
+                              <th>Date</th>
+                              <th>Description</th>
+                              <th>Montant</th>
+                              <th>Statut</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {transactions.map((transaction) => (
+                              <tr key={transaction.id}>
+                                <td>{transaction.date}</td>
+                                <td>{transaction.description}</td>
+                                <td className={transaction.type === 'credit' ? 'text-success' : 'text-danger'}>
+                                  {transaction.type === 'credit' ? '+' : '-'}
+                                  {Math.abs(transaction.amount).toFixed(2)} €
+                                </td>
+                                <td className={getStatusStyle(transaction.status)}>
+                                  {transaction.status}
+                                </td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </Table>
+                      </Card.Body>
+                    </Card>
+                  </Container>
                   <div className="twit-feed">
                     <div className="d-flex align-items-center mb-4">
                       <Image className="theme-color-default-img rounded-pill img-fluid avatar-60 me-3" src={image1} alt="qapital" />
@@ -380,6 +455,38 @@ const DetailEpargneOfUser = memo((props) => {
             </Card.Header>
 
             <Card.Body className="p-0">
+              <Container className="mt-5">
+                <Card>
+                  <Card.Body>
+                    <Card.Title className="mb-4">Transactions récentes</Card.Title>
+                    <Table striped bordered hover>
+                      <thead>
+                        <tr>
+                          <th>Date</th>
+                          <th>Description</th>
+                          <th>Montant</th>
+                          <th>Statut</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {transactions.map((transaction) => (
+                          <tr key={transaction.id}>
+                            <td>{transaction.date}</td>
+                            <td>{transaction.description}</td>
+                            <td className={transaction.type === 'credit' ? 'text-success' : 'text-danger'}>
+                              {transaction.type === 'credit' ? '+' : '-'}
+                              {Math.abs(transaction.amount).toFixed(2)} €
+                            </td>
+                            <td className={getStatusStyle(transaction.status)}>
+                              {transaction.status}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </Table>
+                  </Card.Body>
+                </Card>
+              </Container>
               <div className="table-responsive mt-4">
                 <Table striped id="basic-table" className=" mb-0" role="grid">
                   <thead>
@@ -489,18 +596,15 @@ const DetailEpargneOfUser = memo((props) => {
                 <path fillRule="evenodd" clipRule="evenodd" d="M8.07996 6.6499V6.6599C7.64896 6.6599 7.29996 7.0099 7.29996 7.4399C7.29996 7.8699 7.64896 8.2199 8.07996 8.2199H11.069C11.5 8.2199 11.85 7.8699 11.85 7.4289C11.85 6.9999 11.5 6.6499 11.069 6.6499H8.07996ZM15.92 12.7399H8.07996C7.64896 12.7399 7.29996 12.3899 7.29996 11.9599C7.29996 11.5299 7.64896 11.1789 8.07996 11.1789H15.92C16.35 11.1789 16.7 11.5299 16.7 11.9599C16.7 12.3899 16.35 12.7399 15.92 12.7399ZM15.92 17.3099H8.07996C7.77996 17.3499 7.48996 17.1999 7.32996 16.9499C7.16996 16.6899 7.16996 16.3599 7.32996 16.1099C7.48996 15.8499 7.77996 15.7099 8.07996 15.7399H15.92C16.319 15.7799 16.62 16.1199 16.62 16.5299C16.62 16.9289 16.319 17.2699 15.92 17.3099Z" fill="currentColor" />
               </svg>{" "}
 
-              <small className="normaltext">Historique</small></Button>
+              <small className="normaltext">Détails</small></Button>
           </div>
         </div>
 
         <Col xs="12" className="mt-3 mb-0">
           <Card>
             <Card.Body>
-              <div className="d-flex align-items-center justify-content-between">
-                <small className="d-flex align-items-center"><svg width="18" className="me-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path opacity="0.4" d="M22 11.9998C22 17.5238 17.523 21.9998 12 21.9998C6.477 21.9998 2 17.5238 2 11.9998C2 6.47776 6.477 1.99976 12 1.99976C17.523 1.99976 22 6.47776 22 11.9998Z" fill="currentColor" />
-                  <path fillRule="evenodd" clipRule="evenodd" d="M12.8701 12.6307C12.8701 13.1127 12.4771 13.5057 11.9951 13.5057C11.5131 13.5057 11.1201 13.1127 11.1201 12.6307V8.21069C11.1201 7.72869 11.5131 7.33569 11.9951 7.33569C12.4771 7.33569 12.8701 7.72869 12.8701 8.21069V12.6307ZM11.1251 15.8035C11.1251 15.3215 11.5161 14.9285 11.9951 14.9285C12.4881 14.9285 12.8801 15.3215 12.8801 15.8035C12.8801 16.2855 12.4881 16.6785 12.0051 16.6785C11.5201 16.6785 11.1251 16.2855 11.1251 15.8035Z" fill="currentColor" />
-                </svg>{"   "} {epargnes_info.name_elu}</small>
+              <div className="d-flex align-items-center justify-content-center">
+                <small className="d-flex align-items-center"> <strong>{epargnes_info.name_elu} le testde dnfio iod fionododogioof jnjngidfgio dfo od fgo dfg iod fg</strong></small>
 
 
               </div>
@@ -509,62 +613,46 @@ const DetailEpargneOfUser = memo((props) => {
         </Col>
 
 
+
+
+
         <Col className="mt-0">
 
           <Card>
-            <Card.Header className="d-flex justify-content-between">
-              <div className="header-title">
-                <h6 className="card-title">Récentes transactions</h6>
-              </div>
-
-            </Card.Header>
-            <Card.Body className="p-0">
-              <div className="table-responsive mt-4">
-                <Table className=" mb-0" role="grid">
-                  <thead>
-                    <tr>
-                      <th scope="col"><small>Destinataire</small></th>
-                      <th className="text-center" scope="col"><small>Montant</small></th>
-                      <th className="text-center" scope="col"><small>Type</small></th>
-                      <th className="text-center" scope="col"><small>Etat</small></th>
-                      <th className="text-center" scope="col"><small>Date</small></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-
-                    {epargnes_transactions.map((item, idx) => (
-                      <tr key={idx}>
-                        <td>
-                          <div className="d-flex align-items-center">
-                            <img
-                              className="rounded img-fluid avatar-30 me-3 bg-soft-primary"
-                              src="https://img.freepik.com/premium-photo/flight-attendant-digital-avatar-generative-ai_934475-9234.jpg"
-                              alt="profile"
-                            />
-                            <small className="normaltext">{item.ref3_transaction}</small>
-                          </div>
-                        </td>
-
-
-                        <td className="text-center normaltext"><small>XAF 3000</small></td>
-                        <td>
-                          <div className="text-primary text-center normaltext"><small>Envoi </small></div>
-                        </td>
-                        <td>
-                          {item.state_transaction === "Accept" ? (<div className="text-success text-center normaltext">Accept</div>) : (<div className="text-danger text-center normaltext">Reject</div>)}
-
-                        </td>
-                        <td><small className="text-center normaltext">{new Date(item.created_at).toLocaleString()}</small></td>
-                      </tr>
-                    ))}
-
-
-
-
-
-                  </tbody>
-                </Table>
-              </div>
+            <Card.Body>
+              <Card.Title className="mb-3">Transactions
+                <br />
+                <small className="text-muted">{epargnes_info.name_elu}</small> </Card.Title>
+              <ListGroup variant="flush" style={{ maxHeight: '70vh', overflowY: 'auto' }}>
+                {transactions.slice(0, visibleTransactions).map((transaction) => (
+                  <ListGroup.Item key={transaction.id} className="px-0 py-2 border-bottom">
+                    <div className="d-flex justify-content-between">
+                      <div style={{ flex: '1', minWidth: 0, paddingRight: '10px' }}>
+                        <div style={{ whiteSpace: 'normal', wordWrap: 'break-word' }}>
+                          {transaction.description}
+                        </div>
+                        <small className="text-muted">{transaction.date}</small>
+                      </div>
+                      <div style={{ textAlign: 'right', flexShrink: 0 }}>
+                        <div className={transaction.type === 'credit' ? 'text-success' : 'text-danger'}>
+                          {transaction.type === 'credit' ? '+' : '-'}
+                          {formatNumber(transaction.amount)} XAF
+                        </div>
+                        <small className={`text-${getStatusStyle(transaction.status)}`}>
+                          {transaction.status}
+                        </small>
+                      </div>
+                    </div>
+                  </ListGroup.Item>
+                ))}
+              </ListGroup>
+              {visibleTransactions < transactions.length && (
+                <div className="text-center mt-3">
+                  <button className="btn btn-outline-primary" onClick={loadMore}>
+                    Voir plus
+                  </button>
+                </div>
+              )}
             </Card.Body>
           </Card>
 
