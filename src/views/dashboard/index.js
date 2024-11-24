@@ -2,8 +2,8 @@ import React, { useState, useEffect, memo, Fragment } from "react";
 import { Row, Col, Image, Card, Table, Button } from "react-bootstrap";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import AuthUser from '../../components/authuser/AuthUser';
-import { urlRoot } from "../../components/authuser/urlApp";
 //circular
+import { urlRoot } from "../../components/authuser/urlApp";
 import Circularprogressbar from "../../components/circularprogressbar.js";
 
 // AOS
