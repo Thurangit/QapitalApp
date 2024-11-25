@@ -4,8 +4,6 @@ import {
   Col,
   Button,
   Card,
-  Image,
-  Table,
   Modal,
   Form,
   Spinner,

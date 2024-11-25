@@ -1,6 +1,6 @@
 import React, { useState, useEffect, memo, Fragment } from "react";
 import { Row, Col, Image, Card, Table, Button } from "react-bootstrap";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import AuthUser from '../../components/authuser/AuthUser';
 //circular
 import { urlRoot } from "../../components/authuser/urlApp";
